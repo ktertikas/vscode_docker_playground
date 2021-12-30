@@ -1,0 +1,30 @@
+{
+    "name": "vscode-dev-cpu",
+    "dockerFile": "../docker/Dockerfile.cpu",
+    "build": {
+        "args": {
+            "UBUNTU_VERSION": "18.04",
+            "PYTHON_VERSION": "3.7"
+        }
+    },
+    "context": "../",
+    "runArgs": [
+        "--mount",
+        "source=${env:HOME}/datasets,target=/datasets,type=bind"
+        // add other mounts / volumes here, and all other parameters used in docker run
+    ],
+    "workspaceFolder": "/code",
+    "workspaceMount": "source=${env:HOME}/code,target=/code,type=bind",
+    "extensions": [
+        "ms-python.python",
+        // add many more extensions here!
+    ],
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "zsh": {
+                "path": "/bin/zsh"
+            },
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh"
+    }
+}

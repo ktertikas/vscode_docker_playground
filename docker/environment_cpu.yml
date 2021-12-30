@@ -1,0 +1,13 @@
+name: base
+dependencies:
+  - pip
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - Pillow
+  - h5py
+  - pip:
+    - torch==1.8.0+cpu
+    - torchvision==0.9.0+cpu
+    - --find-links https://download.pytorch.org/whl/torch_stable.html
