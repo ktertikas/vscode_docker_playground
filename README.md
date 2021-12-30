@@ -25,7 +25,7 @@ docker run -it \
 docker run -it \
     --mount type=bind,source=$HOME/code,target=/code \
     --mount type=bind,source=$HOME/datasets,target=/datasets \
-    --gpus all
+    --gpus all \
     docker_playground_gpu /bin/zsh
 ```
 
