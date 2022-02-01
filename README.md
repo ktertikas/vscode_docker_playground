@@ -18,13 +18,11 @@ Once you have built a Docker Image, you can run a Docker Container, that uses th
 # Simple cpu image example
 docker run -it \
     --mount type=bind,source=$HOME/code,target=/code \
-    --mount type=bind,source=$HOME/datasets,target=/datasets \
     docker_playground_cpu /bin/zsh
 
 # Simple gpu image example. Note that nvidia-docker needs to be installed!
 docker run -it \
     --mount type=bind,source=$HOME/code,target=/code \
-    --mount type=bind,source=$HOME/datasets,target=/datasets \
     --gpus all \
     docker_playground_gpu /bin/zsh
 ```
